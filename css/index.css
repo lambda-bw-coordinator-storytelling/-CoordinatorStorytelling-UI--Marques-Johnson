@@ -126,6 +126,15 @@ table {
   border-collapse: collapse;
   border-spacing: 0;
 }
+
+h1 {
+  text-align: center;
+  margin-top: 30px;
+  font-family: 'Rosario', sans-serif;
+  font-weight: bold;
+  font-size: 30px;
+}
+
 .dropdown {
   z-index: 2;
   position: absolute;
@@ -143,7 +152,7 @@ table {
 .header-container .header-logo {
   font-family: Prompt;
   font-style: normal;
-  font-size: 32px;
+  font-size: 28px;
   color: #FCFCFC;
 }
 
@@ -204,6 +213,7 @@ a.dropdown-link {
   font-weight: normal;
   padding-bottom: 10px;
   font-family: 'Rosario', sans-serif;
+  padding-left: 5px;
 }
 .tabs .tabs-item-selected {
   display: block;
@@ -231,12 +241,13 @@ a.dropdown-link {
   cursor: pointer;
 }
 .tabs .tabs-link:hover {
-  background-color: #FCFCFC;
+  background-color: rgba(226, 101, 18, 0.75);
+  color: #FCFCFC;
 }
 @media (max-width: 500px) {
   .tabs .tabs-link {
     max-width: 100%;
-    padding: 0%;
+    padding-left: 5%;
     padding-top: 10px;
     padding-bottom: 15px;
     display: flex;
@@ -256,12 +267,14 @@ a.dropdown-link {
 @media (max-width: 500px) {
   .tabs .tabs-link-selected {
     max-width: 100%;
-    padding: 0%;
+    padding-left: 5%;
     padding-top: 10px;
     padding-bottom: 15px;
     display: flex;
     flex-direction: column;
     font-size: 18px;
+    background-color: #000000;
+    color: #FCFCFC;
   }
 }
 .tabs .tabs-item-description {
@@ -329,6 +342,14 @@ body {
 .container{
   display: flex;
   justify-content: center;
+
+}
+
+button {
+  text-align: center;
+  color: #FFFFFF;
+  font-family: 'Rosario', sans-serif;
+  font-size: 35px;
 
 }
 
