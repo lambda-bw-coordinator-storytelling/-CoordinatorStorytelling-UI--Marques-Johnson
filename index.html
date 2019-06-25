@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+    <title>Build Week-BCF Storytelling</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="./css/reset.less">
+    <link href="https://fonts.googleapis.com/css?family=Rosario&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css"
+        integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
+    <link rel="stylesheet" href="./css/index.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/2.0.2/TweenMax.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/2.0.2/TweenMax.min.js"></script>
+    <link href="https://fonts.googleapis.com/css?family=PT+Serif|Carter+One|Rambla" rel="stylesheet">
+    <script type="text/javascript" src="js/index.js" async></script>
+
+</head>
+
+<body>
+    <div class="header-container">
+        <div class="header-logo">BCF</div>
+        <div class="dropdown">            
+            <div class="dropdown-button"><img src="img/menu.png"></div>          
+            <div class="dropdown-content dropdown-hidden">
+                <a class="dropdown-link" href="index.html">Home</a>
+                <a class="dropdown-link" href="about-us.html">About</a>
+                <a class="dropdown-link" href="#">Stories</a>
+                <a class="dropdown-link" href="#">Partners</a>
+                <a class="dropdown-link" href="#">Sign In</a>
+                <a class="dropdown-link" href="#">Sign Up</a>
+            </div>
+
+        </div>
+        
+
+    </div>
+
+    <!-- Video Section-->
+    <div class="section">
+        <iframe width="100%" height="415"
+            src="https://www.youtube.com/embed/0lmqlxco98Y" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>></iframe>
+    </div>
+    <!--Video End-->
+
+    <div class="container">
+       <button type="button" class="btn btn-primary">Explore Stories</a></i>
+    </div>
+    
+
+    <div class="section">
+        <div class="tabs">
+            <div class="tabs-links">
+                <div class="tabs-link tabs-link-selected" data-tab="1">Vision</div>
+                <div class="tabs-link" data-tab="2">Mission</div>
+                <div class="tabs-link" data-tab="3">Values</div>
+            </div>
+            <div class="tabs-items">
+                <div class="tabs-item tabs-item-selected" data-tab="1">
+                    <div class="tabs-item-title">Vision</div>
+                    <div class="tabs-item-description">
+                       The BCF works in 19 countries in all sectors to empower people and inspire creativity.
+                    </div>
+                </div>
+                <div class="tabs-item" data-tab="2">
+                    <div class="tabs-item-title">Mission</div>
+                    <div class="tabs-item-description">
+                        To motivate and inspire every generation to be innovative and successful.
+                    </div>
+                </div>
+                <div class="tabs-item" data-tab="3">
+                    <div class="tabs-item-title">Values</div>
+                    <div class="tabs-item-description">
+                        <p>
+                            Compasionate Credible Innovative Integrity Respect <br />
+                            <br />
+                            
+                            <p>
+                                <br />
+                            </p>
+                        </p>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    </div>
+
+    <footer>       
+        <p>Copyright&copy; 2018 All rights reserved</p>
+        <span>BCF</span>
+    </footer>
+
+    <script>
+        class TabLink {
+            constructor(element) {
+
+                this.element = element;
+
+
+                this.data = this.element.dataset.tab;
+
+
+                this.itemElement = document.querySelector(`.tabs-item[data-tab="${this.data}"]`);
+
+
+                this.tabItem = new TabItem(this.itemElement);
+
+
+                this.element.addEventListener('click', _ => this.select());
+            };
+
+            select() {
+
+                const links = document.querySelectorAll('.tabs-link');
+
+                links.forEach(tab => tab.classList.remove('tabs-link-selected'))
+
+                this.element.classList.add('tabs-link-selected');
+
+                this.tabItem.select();
+            }
+        }
+
+        class TabItem {
+            constructor(element) {
+                this.element = element;
+            }
+
+            select() {
+
+                const items = document.querySelectorAll('.tabs-item');
+
+
+                items.forEach(tabItem => tabItem.classList.remove('tabs-item-selected'));
+
+                this.element.classList.add('tabs-item-selected');
+            }
+        }
+
+        links = document.querySelectorAll('.tabs-link').forEach(tab => new TabLink(tab));
+
+
+        //Dropdown
+
+        class Dropdown {
+            constructor(element) {
+
+                this.element = element
+
+                this.button = this.element.querySelector(".dropdown-button");
+
+
+                this.content = document.querySelector('.dropdown-content');
+
+                this.button.addEventListener('click', (e) => {
+                    this.toggleContent();
+                })
+
+            }
+
+            toggleContent(e) {
+
+                if (this.content.classList.contains('dropdown-hidden')) {
+                    this.content.classList.toggle('dropdown-hidden');
+                    TweenMax.fromTo(this.content, .8, {
+                        x: -200
+                    }, {
+                            x: 0
+                        })
+                } else {
+                    setTimeout(() => {
+                        this.content.classList.toggle('dropdown-hidden')
+                    }, 150);
+                    TweenMax.fromTo(this.content, .8, {
+                        x: 0
+                    }, {
+                            x: -200
+                        })
+                }
+            }
+        }
+
+        let dropdowns = document.querySelectorAll('.dropdown').forEach(dropdown => new Dropdown(dropdown));
+    </script>
+</body>
+
+</html>
