@@ -214,6 +214,7 @@ a.dropdown-link {
   padding-bottom: 10px;
   font-family: 'Rosario', sans-serif;
   padding-left: 5px;
+  border-bottom: #000000;
 }
 .tabs .tabs-item-selected {
   display: block;
@@ -222,6 +223,7 @@ a.dropdown-link {
   display: flex;
   background-color: #FCFCFC;
   font-family: 'Rosario', sans-serif;
+  border-bottom: #000000;
 }
 @media (max-width: 500px) {
   .tabs .tabs-links {
@@ -239,10 +241,11 @@ a.dropdown-link {
   border-right: 1px solid #000000;
   color: #000000;
   cursor: pointer;
+  border-bottom: 1px solid #000000;
 }
 .tabs .tabs-link:hover {
-  background-color: rgba(226, 101, 18, 0.75);
-  color: #FCFCFC;
+  background-color: rgba(171, 165, 161, 0.75);
+  color: #000000;
 }
 @media (max-width: 500px) {
   .tabs .tabs-link {
@@ -262,6 +265,7 @@ a.dropdown-link {
   border-right: 1px solid #FCFCFC;
   background-color: #000000;
   color: #FCFCFC;
+  border-bottom: 1px solid #000000;
 }
 
 @media (max-width: 500px) {
@@ -382,7 +386,7 @@ button {
 }
 h5 {
   font-weight: bold;
-  color: #FCFCFC;
+  color: #000000;
   font-family: 'Rosario', sans-serif;
 }
 .banner {
