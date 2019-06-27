@@ -372,7 +372,7 @@ button {
   font-weight: normal;
 }
 @media (max-width: 500px) {
-  .section .section .about-section {
+  .section .section {
     max-width: 100%;
     padding: 0%;
     padding-top: 3%;
